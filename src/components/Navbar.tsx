@@ -49,11 +49,11 @@ export const Navbar: React.FC<NavbarProps> = ({
           </button>
 
           {/* Tab Navigation */}
-          <nav className="hidden md:flex items-center gap-1.5">
+          <nav className="hidden md:flex items-center gap-1.5 shrink-0">
             <button
               id="tab-board-btn"
               onClick={() => onTabChange('board')}
-              className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-colors border ${
+              className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-colors border whitespace-nowrap shrink-0 ${
                 currentTab === 'board'
                   ? 'bg-[#edf5f0] text-[#2e523f] border-[#e2ece5]'
                   : 'bg-transparent text-[#71717a] border-transparent hover:bg-[#f4f4f5] hover:text-[#18181b]'
@@ -65,7 +65,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button
               id="tab-pdf-btn"
               onClick={() => onTabChange('pdf')}
-              className={`flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-lg transition-colors border ${
+              className={`flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-lg transition-colors border whitespace-nowrap shrink-0 ${
                 currentTab === 'pdf'
                   ? 'bg-[#edf5f0] text-[#2e523f] border-[#e2ece5]'
                   : 'bg-transparent text-[#71717a] border-transparent hover:bg-[#f4f4f5] hover:text-[#18181b]'
@@ -78,7 +78,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button
               id="tab-hwp-btn"
               onClick={() => onTabChange('hwp')}
-              className={`flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-lg transition-colors border ${
+              className={`flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-lg transition-colors border whitespace-nowrap shrink-0 ${
                 currentTab === 'hwp'
                   ? 'bg-[#edf5f0] text-[#2e523f] border-[#e2ece5]'
                   : 'bg-transparent text-[#71717a] border-transparent hover:bg-[#f4f4f5] hover:text-[#18181b]'
@@ -92,7 +92,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               <button
                 id="tab-admin-btn"
                 onClick={() => onTabChange('admin')}
-                className={`flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-lg transition-colors border ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-lg transition-colors border whitespace-nowrap shrink-0 ${
                   currentTab === 'admin'
                     ? 'bg-[#edf5f0] text-[#2e523f] border-[#e2ece5]'
                     : 'bg-transparent text-[#71717a] border-transparent hover:bg-[#f4f4f5] hover:text-[#18181b]'
@@ -107,7 +107,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               <button
                 id="tab-my-btn"
                 onClick={() => onTabChange('my')}
-                className={`flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-lg transition-colors border ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-lg transition-colors border whitespace-nowrap shrink-0 ${
                   currentTab === 'my'
                     ? 'bg-[#edf5f0] text-[#2e523f] border-[#e2ece5]'
                     : 'bg-transparent text-[#71717a] border-transparent hover:bg-[#f4f4f5] hover:text-[#18181b]'
@@ -121,16 +121,16 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
 
         {/* Center/Right: Post View Mode Switch & User controls */}
-        <div className="flex items-center gap-2.5">
+        <div className="flex items-center gap-2.5 shrink-0">
           {/* Post Open Mode Selector */}
           <div
             title="게시글 열람 형태 (오픈형 모달 vs 일반 페이지 이동)"
-            className="hidden sm:flex items-center p-0.5 bg-[#f4f4f5] border border-[#ececed] rounded-lg text-xs"
+            className="hidden sm:flex items-center p-0.5 bg-[#f4f4f5] border border-[#ececed] rounded-lg text-xs shrink-0"
           >
             <button
               id="viewmode-modal-btn"
               onClick={() => onToggleViewMode('modal')}
-              className={`flex items-center gap-1 px-2.5 py-1 rounded-md transition-all font-medium border ${
+              className={`flex items-center gap-1 px-2.5 py-1 rounded-md transition-all font-medium border whitespace-nowrap shrink-0 ${
                 viewMode === 'modal'
                   ? 'bg-[#ffffff] text-[#2e523f] shadow-2xs border-[#f0f0f1]'
                   : 'bg-transparent text-[#71717a] border-transparent hover:text-[#18181b]'
@@ -142,7 +142,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button
               id="viewmode-page-btn"
               onClick={() => onToggleViewMode('page')}
-              className={`flex items-center gap-1 px-2.5 py-1 rounded-md transition-all font-medium border ${
+              className={`flex items-center gap-1 px-2.5 py-1 rounded-md transition-all font-medium border whitespace-nowrap shrink-0 ${
                 viewMode === 'page'
                   ? 'bg-[#ffffff] text-[#2e523f] shadow-2xs border-[#f0f0f1]'
                   : 'bg-transparent text-[#71717a] border-transparent hover:text-[#18181b]'
@@ -157,7 +157,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <button
             id="nav-write-btn"
             onClick={onOpenPostForm}
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs sm:text-sm font-medium rounded-lg bg-[#edf5f0] hover:bg-[#e4ede7] text-[#2a4d3b] border border-[#e2ece5] transition-colors"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs sm:text-sm font-medium rounded-lg bg-[#edf5f0] hover:bg-[#e4ede7] text-[#2a4d3b] border border-[#e2ece5] transition-colors whitespace-nowrap shrink-0"
           >
             <PenSquare className="w-3.5 h-3.5" />
             글쓰기
@@ -165,18 +165,18 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* User Status / Auth */}
           {currentUser ? (
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 shrink-0">
               <div className="hidden lg:flex items-center gap-2 pl-2 border-l border-[#ececed]">
-                <span className="text-xs font-semibold text-[#18181b]">
+                <span className="text-xs font-semibold text-[#18181b] whitespace-nowrap">
                   {currentUser.nickname}
                 </span>
                 {currentUser.role === 'admin' ? (
-                  <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 text-[10px] font-medium rounded bg-[#18181b] text-white border border-[#27272a]">
+                  <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 text-[10px] font-medium rounded bg-[#18181b] text-white border border-[#27272a] whitespace-nowrap">
                     <Shield className="w-2.5 h-2.5" />
                     관리자
                   </span>
                 ) : (
-                  <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 text-[10px] font-medium rounded bg-[#edf5f0] text-[#2e523f] border border-[#e2ece5]">
+                  <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 text-[10px] font-medium rounded bg-[#edf5f0] text-[#2e523f] border border-[#e2ece5] whitespace-nowrap">
                     <UserCheck className="w-2.5 h-2.5" />
                     일반회원
                   </span>
@@ -187,17 +187,17 @@ export const Navbar: React.FC<NavbarProps> = ({
                 id="nav-logout-btn"
                 onClick={onLogout}
                 title="로그아웃"
-                className="p-1.5 rounded-lg bg-[#f4f4f5] hover:bg-[#eaeaea] text-[#71717a] hover:text-[#18181b] border border-[#e8e8ea] transition-colors"
+                className="p-1.5 rounded-lg bg-[#f4f4f5] hover:bg-[#eaeaea] text-[#71717a] hover:text-[#18181b] border border-[#e8e8ea] transition-colors shrink-0"
               >
                 <LogOut className="w-3.5 h-3.5" />
               </button>
             </div>
           ) : (
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-1.5 shrink-0">
               <button
                 id="nav-login-btn"
                 onClick={() => onOpenAuth('login')}
-                className="inline-flex items-center gap-1 px-3 py-1.5 text-xs sm:text-sm font-medium rounded-lg bg-[#f4f4f5] hover:bg-[#eaeaea] text-[#27272a] border border-[#e8e8ea] transition-colors"
+                className="inline-flex items-center gap-1 px-3 py-1.5 text-xs sm:text-sm font-medium rounded-lg bg-[#f4f4f5] hover:bg-[#eaeaea] text-[#27272a] border border-[#e8e8ea] transition-colors whitespace-nowrap shrink-0"
               >
                 <LogIn className="w-3.5 h-3.5" />
                 로그인
@@ -205,7 +205,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               <button
                 id="nav-signup-btn"
                 onClick={() => onOpenAuth('signup')}
-                className="hidden sm:inline-flex items-center px-3 py-1.5 text-xs sm:text-sm font-medium rounded-lg bg-[#18181b] hover:bg-[#27272a] text-[#f4f4f5] border border-[#27272a] transition-colors"
+                className="inline-flex items-center px-3 py-1.5 text-xs sm:text-sm font-medium rounded-lg bg-[#18181b] hover:bg-[#27272a] text-[#f4f4f5] border border-[#27272a] transition-colors whitespace-nowrap shrink-0"
               >
                 회원가입
               </button>

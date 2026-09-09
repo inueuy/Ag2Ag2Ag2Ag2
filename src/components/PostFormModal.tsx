@@ -187,7 +187,7 @@ export const PostFormModal: React.FC<PostFormModalProps> = ({
                   key={cat}
                   type="button"
                   onClick={() => setCategory(cat)}
-                  className={`px-3 py-1.5 text-xs font-semibold rounded-lg border transition-all ${
+                  className={`px-3 py-1.5 text-xs font-semibold rounded-lg border transition-all whitespace-nowrap shrink-0 ${
                     category === cat
                       ? 'bg-[#edf5f0] text-[#2c5340] border-[#e0ece4]'
                       : 'bg-[#f4f4f5] text-[#71717a] border-[#e8e8ea] hover:bg-[#eaeaea] hover:text-[#18181b]'
@@ -297,17 +297,17 @@ export const PostFormModal: React.FC<PostFormModalProps> = ({
           </div>
 
           {/* Modal Footer with tone-on-tone buttons */}
-          <div className="flex items-center justify-end gap-2.5 pt-3 border-t border-[#f4f4f5]">
+          <div className="flex items-center justify-end gap-2.5 pt-3 border-t border-[#f4f4f5] shrink-0">
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 text-xs font-semibold rounded-xl bg-[#f4f4f5] hover:bg-[#eaeaea] text-[#27272a] border border-[#e8e8ea] transition-colors"
+              className="px-4 py-2 text-xs font-semibold rounded-xl bg-[#f4f4f5] hover:bg-[#eaeaea] text-[#27272a] border border-[#e8e8ea] transition-colors whitespace-nowrap shrink-0"
             >
               취소
             </button>
             <button
               type="submit"
-              className="px-5 py-2 text-xs font-semibold rounded-xl bg-[#edf5f0] hover:bg-[#e4ede7] text-[#2c5340] border border-[#e0ece4] transition-colors"
+              className="px-5 py-2 text-xs font-semibold rounded-xl bg-[#edf5f0] hover:bg-[#e4ede7] text-[#2c5340] border border-[#e0ece4] transition-colors whitespace-nowrap shrink-0"
             >
               {editPost ? '수정 완료' : '게시글 등록'}
             </button>

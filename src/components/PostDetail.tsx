@@ -185,7 +185,7 @@ export const PostDetail: React.FC<PostDetailProps> = ({
             <button
               id="post-modal-close-top-btn"
               onClick={onClose}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-xl bg-[#f4f4f5] hover:bg-[#eaeaea] text-[#27272a] border border-[#e8e8ea] transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-xl bg-[#f4f4f5] hover:bg-[#eaeaea] text-[#27272a] border border-[#e8e8ea] transition-colors whitespace-nowrap shrink-0"
               title="창 닫기"
             >
               <X className="w-3.5 h-3.5 text-[#71717a]" />
@@ -195,7 +195,7 @@ export const PostDetail: React.FC<PostDetailProps> = ({
             <button
               id="post-page-back-top-btn"
               onClick={onBack}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-xl bg-[#f4f4f5] hover:bg-[#eaeaea] text-[#27272a] border border-[#e8e8ea] transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-xl bg-[#f4f4f5] hover:bg-[#eaeaea] text-[#27272a] border border-[#e8e8ea] transition-colors whitespace-nowrap shrink-0"
               title="게시판 목록으로 뒤로가기"
             >
               <ArrowLeft className="w-3.5 h-3.5 text-[#71717a]" />
@@ -205,12 +205,12 @@ export const PostDetail: React.FC<PostDetailProps> = ({
         </div>
 
         {/* Action Controls for Author/Admin */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 shrink-0">
           {isAdmin && (
             <button
               onClick={handleToggleNotice}
               title={post.isNotice ? '공지 해제' : '공지로 고정'}
-              className={`inline-flex items-center gap-1 px-2.5 py-1.5 text-xs font-medium rounded-xl border transition-colors ${
+              className={`inline-flex items-center gap-1 px-2.5 py-1.5 text-xs font-medium rounded-xl border transition-colors whitespace-nowrap shrink-0 ${
                 post.isNotice
                   ? 'bg-[#edf5f0] text-[#2e523f] border-[#e0ece4]'
                   : 'bg-[#f4f4f5] text-[#52525b] border-[#e8e8ea] hover:bg-[#eaeaea]'
@@ -226,7 +226,7 @@ export const PostDetail: React.FC<PostDetailProps> = ({
               <button
                 id="post-edit-btn"
                 onClick={() => onEdit(post)}
-                className="inline-flex items-center gap-1 px-2.5 py-1.5 text-xs font-medium rounded-xl bg-[#f4f4f5] hover:bg-[#eaeaea] text-[#27272a] border border-[#e8e8ea] transition-colors"
+                className="inline-flex items-center gap-1 px-2.5 py-1.5 text-xs font-medium rounded-xl bg-[#f4f4f5] hover:bg-[#eaeaea] text-[#27272a] border border-[#e8e8ea] transition-colors whitespace-nowrap shrink-0"
               >
                 <Edit3 className="w-3 h-3 text-[#71717a]" />
                 수정
@@ -234,7 +234,7 @@ export const PostDetail: React.FC<PostDetailProps> = ({
               <button
                 id="post-delete-btn"
                 onClick={handleDelete}
-                className="inline-flex items-center gap-1 px-2.5 py-1.5 text-xs font-medium rounded-xl bg-[#fdf2f2] hover:bg-[#fae2e2] text-[#9c3a3a] border border-[#fae2e2] transition-colors"
+                className="inline-flex items-center gap-1 px-2.5 py-1.5 text-xs font-medium rounded-xl bg-[#fdf2f2] hover:bg-[#fae2e2] text-[#9c3a3a] border border-[#fae2e2] transition-colors whitespace-nowrap shrink-0"
               >
                 <Trash2 className="w-3 h-3" />
                 삭제
@@ -372,7 +372,7 @@ export const PostDetail: React.FC<PostDetailProps> = ({
                 <button
                   type="submit"
                   disabled={!commentText.trim()}
-                  className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-semibold rounded-lg bg-[#edf5f0] hover:bg-[#e4ede7] text-[#2c5340] border border-[#e0ece4] transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                  className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-semibold rounded-lg bg-[#edf5f0] hover:bg-[#e4ede7] text-[#2c5340] border border-[#e0ece4] transition-colors disabled:opacity-40 disabled:cursor-not-allowed whitespace-nowrap shrink-0"
                 >
                   <Send className="w-3 h-3" />
                   댓글 등록
@@ -381,7 +381,7 @@ export const PostDetail: React.FC<PostDetailProps> = ({
                 <button
                   type="button"
                   onClick={onRequireAuth}
-                  className="px-3 py-1.5 text-xs font-semibold rounded-lg bg-[#f4f4f5] hover:bg-[#eaeaea] text-[#27272a] border border-[#e8e8ea] transition-colors"
+                  className="px-3 py-1.5 text-xs font-semibold rounded-lg bg-[#f4f4f5] hover:bg-[#eaeaea] text-[#27272a] border border-[#e8e8ea] transition-colors whitespace-nowrap shrink-0"
                 >
                   로그인하고 댓글 쓰기
                 </button>
@@ -429,7 +429,7 @@ export const PostDetail: React.FC<PostDetailProps> = ({
                     {canDeleteComment && (
                       <button
                         onClick={() => handleDeleteComment(comment.id)}
-                        className="text-[11px] text-[#a1a1aa] hover:text-[#9c3a3a] transition-colors"
+                        className="text-[11px] text-[#a1a1aa] hover:text-[#9c3a3a] transition-colors whitespace-nowrap shrink-0"
                         title="댓글 삭제"
                       >
                         삭제
@@ -457,7 +457,7 @@ export const PostDetail: React.FC<PostDetailProps> = ({
           <button
             id="post-modal-close-bottom-btn"
             onClick={onClose}
-            className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold rounded-xl bg-[#f4f4f5] hover:bg-[#eaeaea] text-[#27272a] border border-[#e8e8ea] transition-colors"
+            className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold rounded-xl bg-[#f4f4f5] hover:bg-[#eaeaea] text-[#27272a] border border-[#e8e8ea] transition-colors whitespace-nowrap shrink-0"
           >
             <X className="w-3.5 h-3.5 text-[#71717a]" />
             닫기
@@ -466,7 +466,7 @@ export const PostDetail: React.FC<PostDetailProps> = ({
           <button
             id="post-page-back-bottom-btn"
             onClick={onBack}
-            className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold rounded-xl bg-[#f4f4f5] hover:bg-[#eaeaea] text-[#27272a] border border-[#e8e8ea] transition-colors"
+            className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold rounded-xl bg-[#f4f4f5] hover:bg-[#eaeaea] text-[#27272a] border border-[#e8e8ea] transition-colors whitespace-nowrap shrink-0"
           >
             <ArrowLeft className="w-3.5 h-3.5 text-[#71717a]" />
             목록으로 뒤로가기

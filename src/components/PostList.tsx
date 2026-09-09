@@ -119,7 +119,7 @@ export const PostList: React.FC<PostListProps> = ({
                   onSelectCategory(cat);
                   setCurrentPage(1);
                 }}
-                className={`px-3 py-1.5 text-xs font-semibold rounded-xl border transition-all ${
+                className={`px-3 py-1.5 text-xs font-semibold rounded-xl border transition-all whitespace-nowrap shrink-0 ${
                   isSelected
                     ? 'bg-[#edf5f0] text-[#2c5340] border-[#e0ece4]'
                     : 'bg-[#f4f4f5] text-[#52525b] border-[#e8e8ea] hover:bg-[#eaeaea] hover:text-[#18181b]'
@@ -134,13 +134,13 @@ export const PostList: React.FC<PostListProps> = ({
         {/* View Mode and My Filter Controls */}
         <div className="flex flex-wrap items-center gap-2 self-stretch sm:self-auto justify-between sm:justify-end">
           {currentUser && (
-            <div className="flex items-center p-0.5 bg-[#f4f4f5] border border-[#ececed] rounded-xl text-xs">
+            <div className="flex items-center p-0.5 bg-[#f4f4f5] border border-[#ececed] rounded-xl text-xs shrink-0">
               <button
                 onClick={() => {
                   onChangePostFilter('all');
                   setCurrentPage(1);
                 }}
-                className={`px-2.5 py-1 rounded-lg transition-all font-medium border ${
+                className={`px-2.5 py-1 rounded-lg transition-all font-medium border whitespace-nowrap ${
                   postFilter === 'all'
                     ? 'bg-[#ffffff] text-[#18181b] shadow-2xs border-[#f0f0f1]'
                     : 'bg-transparent text-[#71717a] border-transparent hover:text-[#18181b]'
@@ -153,7 +153,7 @@ export const PostList: React.FC<PostListProps> = ({
                   onChangePostFilter('my');
                   setCurrentPage(1);
                 }}
-                className={`px-2.5 py-1 rounded-lg transition-all font-medium border ${
+                className={`px-2.5 py-1 rounded-lg transition-all font-medium border whitespace-nowrap ${
                   postFilter === 'my'
                     ? 'bg-[#edf5f0] text-[#2c5340] shadow-2xs border-[#e0ece4]'
                     : 'bg-transparent text-[#71717a] border-transparent hover:text-[#18181b]'
@@ -165,11 +165,11 @@ export const PostList: React.FC<PostListProps> = ({
           )}
 
           {/* View Mode Pill Switcher */}
-          <div className="flex items-center p-0.5 bg-[#f4f4f5] border border-[#ececed] rounded-xl text-xs">
+          <div className="flex items-center p-0.5 bg-[#f4f4f5] border border-[#ececed] rounded-xl text-xs shrink-0">
             <button
               onClick={() => onToggleViewMode('modal')}
               title="오픈형 모달로 글 열기 (닫기 버튼 포함)"
-              className={`flex items-center gap-1 px-2.5 py-1 rounded-lg transition-all font-medium border ${
+              className={`flex items-center gap-1 px-2.5 py-1 rounded-lg transition-all font-medium border whitespace-nowrap ${
                 viewMode === 'modal'
                   ? 'bg-[#edf5f0] text-[#2c5340] shadow-2xs border-[#e0ece4]'
                   : 'bg-transparent text-[#71717a] border-transparent hover:text-[#18181b]'
@@ -181,7 +181,7 @@ export const PostList: React.FC<PostListProps> = ({
             <button
               onClick={() => onToggleViewMode('page')}
               title="페이지 이동으로 글 열기 (뒤로가기 버튼 포함)"
-              className={`flex items-center gap-1 px-2.5 py-1 rounded-lg transition-all font-medium border ${
+              className={`flex items-center gap-1 px-2.5 py-1 rounded-lg transition-all font-medium border whitespace-nowrap ${
                 viewMode === 'page'
                   ? 'bg-[#edf5f0] text-[#2c5340] shadow-2xs border-[#e0ece4]'
                   : 'bg-transparent text-[#71717a] border-transparent hover:text-[#18181b]'

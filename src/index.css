@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+/* Ensure all buttons, pills, chips and interactive badges never wrap text across multiple lines */
+button,
+[role="button"],
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  white-space: nowrap;
+  word-break: keep-all;
+}

@@ -502,17 +502,17 @@ export const HwpWorkspace: React.FC<HwpWorkspaceProps> = ({ currentUser }) => {
             />
             <button
               onClick={() => fileInputRef.current?.click()}
-              className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-xl bg-[#2e523f] text-[#ffffff] hover:bg-[#254233] transition-colors shadow-xs"
+              className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-xl bg-[#2e523f] text-[#ffffff] hover:bg-[#254233] transition-colors shadow-xs whitespace-nowrap shrink-0"
             >
               <Upload className="w-3.5 h-3.5" />
               내 PC 파일 열기
             </button>
 
             {/* Sample Dropdown / Quick Buttons */}
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-1.5 shrink-0">
               <button
                 onClick={() => handleLoadSample('notice')}
-                className="flex items-center gap-1 px-3 py-2 text-xs font-medium rounded-xl bg-[#f4f7f5] text-[#2c5340] border border-[#e0ece4] hover:bg-[#eaf1ec] transition-colors"
+                className="flex items-center gap-1 px-3 py-2 text-xs font-medium rounded-xl bg-[#f4f7f5] text-[#2c5340] border border-[#e0ece4] hover:bg-[#eaf1ec] transition-colors whitespace-nowrap shrink-0"
                 title="팬카페 안내문 샘플 열기"
               >
                 <Sparkles className="w-3.5 h-3.5 text-[#3a6951]" />
@@ -520,7 +520,7 @@ export const HwpWorkspace: React.FC<HwpWorkspaceProps> = ({ currentUser }) => {
               </button>
               <button
                 onClick={() => handleLoadSample('support')}
-                className="flex items-center gap-1 px-3 py-2 text-xs font-medium rounded-xl bg-[#f4f7f5] text-[#2c5340] border border-[#e0ece4] hover:bg-[#eaf1ec] transition-colors"
+                className="flex items-center gap-1 px-3 py-2 text-xs font-medium rounded-xl bg-[#f4f7f5] text-[#2c5340] border border-[#e0ece4] hover:bg-[#eaf1ec] transition-colors whitespace-nowrap shrink-0"
                 title="커피차 서포트 공문 샘플 열기"
               >
                 <FileCheck className="w-3.5 h-3.5 text-[#3a6951]" />
@@ -532,34 +532,34 @@ export const HwpWorkspace: React.FC<HwpWorkspaceProps> = ({ currentUser }) => {
 
         {/* Current Document Summary Strip */}
         <div className="mt-5 pt-4 border-t border-[#f0f0f1] flex flex-wrap items-center justify-between gap-3 text-xs text-[#71717a]">
-          <div className="flex items-center gap-3">
-            <span className="font-semibold text-[#18181b] flex items-center gap-1.5">
+          <div className="flex items-center gap-3 shrink-0">
+            <span className="font-semibold text-[#18181b] flex items-center gap-1.5 whitespace-nowrap">
               <span className="w-2 h-2 rounded-full bg-[#315643]"></span>
               현재 작업 문서:
             </span>
-            <span className="px-2 py-0.5 rounded-md bg-[#f4f4f5] text-[#27272a] font-mono font-medium border border-[#e4e4e7]">
+            <span className="px-2 py-0.5 rounded-md bg-[#f4f4f5] text-[#27272a] font-mono font-medium border border-[#e4e4e7] whitespace-nowrap">
               {currentFileName}
             </span>
-            <span className="px-1.5 py-0.5 rounded text-[10px] font-bold uppercase bg-[#edf5f0] text-[#2c5340] border border-[#d6e7dc]">
+            <span className="px-1.5 py-0.5 rounded text-[10px] font-bold uppercase bg-[#edf5f0] text-[#2c5340] border border-[#d6e7dc] whitespace-nowrap">
               {currentFormat}
             </span>
-            <span>총 {totalPages}페이지</span>
+            <span className="whitespace-nowrap">총 {totalPages}페이지</span>
           </div>
 
-          <div className="flex items-center gap-2 text-[11px] text-[#a1a1aa]">
-            <span>엔진: Rust + WebAssembly (@rhwp/core)</span>
+          <div className="flex items-center gap-2 text-[11px] text-[#a1a1aa] shrink-0">
+            <span className="whitespace-nowrap">엔진: Rust + WebAssembly (@rhwp/core)</span>
             <span>•</span>
-            <span>에디터: @rhwp/editor (rhwp-studio)</span>
+            <span className="whitespace-nowrap">에디터: @rhwp/editor (rhwp-studio)</span>
           </div>
         </div>
       </div>
 
       {/* Mode Navigation Tabs */}
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#ececed] pb-2">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 shrink-0">
           <button
             onClick={() => setActiveMode('editor')}
-            className={`flex items-center gap-1.5 px-4 py-2 text-xs sm:text-sm font-semibold rounded-xl transition-all border ${
+            className={`flex items-center gap-1.5 px-4 py-2 text-xs sm:text-sm font-semibold rounded-xl transition-all border whitespace-nowrap shrink-0 ${
               activeMode === 'editor'
                 ? 'bg-[#2e523f] text-[#ffffff] border-[#2e523f] shadow-xs'
                 : 'bg-[#ffffff] text-[#71717a] border-[#ececed] hover:bg-[#f4f4f5] hover:text-[#18181b]'
@@ -576,7 +576,7 @@ export const HwpWorkspace: React.FC<HwpWorkspaceProps> = ({ currentUser }) => {
                 renderDocumentWithCore(currentFileBytes, currentFileName);
               }
             }}
-            className={`flex items-center gap-1.5 px-4 py-2 text-xs sm:text-sm font-semibold rounded-xl transition-all border ${
+            className={`flex items-center gap-1.5 px-4 py-2 text-xs sm:text-sm font-semibold rounded-xl transition-all border whitespace-nowrap shrink-0 ${
               activeMode === 'viewer'
                 ? 'bg-[#2e523f] text-[#ffffff] border-[#2e523f] shadow-xs'
                 : 'bg-[#ffffff] text-[#71717a] border-[#ececed] hover:bg-[#f4f4f5] hover:text-[#18181b]'
@@ -595,7 +595,7 @@ export const HwpWorkspace: React.FC<HwpWorkspaceProps> = ({ currentUser }) => {
                 setConvertSourceFormat(currentFormat);
               }
             }}
-            className={`flex items-center gap-1.5 px-4 py-2 text-xs sm:text-sm font-semibold rounded-xl transition-all border ${
+            className={`flex items-center gap-1.5 px-4 py-2 text-xs sm:text-sm font-semibold rounded-xl transition-all border whitespace-nowrap shrink-0 ${
               activeMode === 'convert'
                 ? 'bg-[#2e523f] text-[#ffffff] border-[#2e523f] shadow-xs'
                 : 'bg-[#ffffff] text-[#71717a] border-[#ececed] hover:bg-[#f4f4f5] hover:text-[#18181b]'
@@ -607,7 +607,7 @@ export const HwpWorkspace: React.FC<HwpWorkspaceProps> = ({ currentUser }) => {
 
           <button
             onClick={() => setActiveMode('history')}
-            className={`flex items-center gap-1.5 px-4 py-2 text-xs sm:text-sm font-semibold rounded-xl transition-all border ${
+            className={`flex items-center gap-1.5 px-4 py-2 text-xs sm:text-sm font-semibold rounded-xl transition-all border whitespace-nowrap shrink-0 ${
               activeMode === 'history'
                 ? 'bg-[#2e523f] text-[#ffffff] border-[#2e523f] shadow-xs'
                 : 'bg-[#ffffff] text-[#71717a] border-[#ececed] hover:bg-[#f4f4f5] hover:text-[#18181b]'
@@ -620,10 +620,10 @@ export const HwpWorkspace: React.FC<HwpWorkspaceProps> = ({ currentUser }) => {
 
         {/* Action Toolbar on Editor Mode */}
         {activeMode === 'editor' && (
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center gap-1.5 shrink-0">
             <button
               onClick={() => handleExportFromEditor('hwpx')}
-              className="flex items-center gap-1 px-3 py-1.5 text-xs font-semibold rounded-lg bg-[#edf5f0] text-[#2c5340] border border-[#e0ece4] hover:bg-[#e2ede6] transition-colors"
+              className="flex items-center gap-1 px-3 py-1.5 text-xs font-semibold rounded-lg bg-[#edf5f0] text-[#2c5340] border border-[#e0ece4] hover:bg-[#e2ede6] transition-colors whitespace-nowrap shrink-0"
               title="HWPX로 파일 저장"
             >
               <Download className="w-3.5 h-3.5" />
@@ -631,7 +631,7 @@ export const HwpWorkspace: React.FC<HwpWorkspaceProps> = ({ currentUser }) => {
             </button>
             <button
               onClick={() => handleExportFromEditor('hwp')}
-              className="flex items-center gap-1 px-3 py-1.5 text-xs font-semibold rounded-lg bg-[#edf5f0] text-[#2c5340] border border-[#e0ece4] hover:bg-[#e2ede6] transition-colors"
+              className="flex items-center gap-1 px-3 py-1.5 text-xs font-semibold rounded-lg bg-[#edf5f0] text-[#2c5340] border border-[#e0ece4] hover:bg-[#e2ede6] transition-colors whitespace-nowrap shrink-0"
               title="HWP(5.0)로 파일 저장"
             >
               <Download className="w-3.5 h-3.5" />
@@ -639,7 +639,7 @@ export const HwpWorkspace: React.FC<HwpWorkspaceProps> = ({ currentUser }) => {
             </button>
             <button
               onClick={() => handleExportFromEditor('hml')}
-              className="hidden sm:flex items-center gap-1 px-3 py-1.5 text-xs font-medium rounded-lg bg-[#ffffff] text-[#71717a] border border-[#ececed] hover:bg-[#f4f4f5] transition-colors"
+              className="hidden sm:flex items-center gap-1 px-3 py-1.5 text-xs font-medium rounded-lg bg-[#ffffff] text-[#71717a] border border-[#ececed] hover:bg-[#f4f4f5] transition-colors whitespace-nowrap shrink-0"
               title="HML XML 형식으로 저장"
             >
               HML

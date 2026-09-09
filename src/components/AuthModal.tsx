@@ -192,7 +192,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
               setMode('login');
               setError(null);
             }}
-            className={`py-1.5 text-xs font-semibold rounded-lg transition-all border ${
+            className={`py-1.5 text-xs font-semibold rounded-lg transition-all border whitespace-nowrap ${
               mode === 'login'
                 ? 'bg-[#ffffff] text-[#18181b] shadow-2xs border-[#f0f0f1]'
                 : 'bg-transparent text-[#71717a] border-transparent hover:text-[#18181b]'
@@ -206,7 +206,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
               setMode('signup');
               setError(null);
             }}
-            className={`py-1.5 text-xs font-semibold rounded-lg transition-all border ${
+            className={`py-1.5 text-xs font-semibold rounded-lg transition-all border whitespace-nowrap ${
               mode === 'signup'
                 ? 'bg-[#ffffff] text-[#18181b] shadow-2xs border-[#f0f0f1]'
                 : 'bg-transparent text-[#71717a] border-transparent hover:text-[#18181b]'
@@ -279,14 +279,14 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                         type="button"
                         onClick={() => handleQuickFill(acc.id, acc.pw)}
                         title="입력 폼에 채우기"
-                        className="px-2 py-1 text-[11px] font-medium rounded-lg bg-[#f4f4f5] hover:bg-[#eaeaea] text-[#52525b] border border-[#e8e8ea] transition-colors"
+                        className="px-2 py-1 text-[11px] font-medium rounded-lg bg-[#f4f4f5] hover:bg-[#eaeaea] text-[#52525b] border border-[#e8e8ea] transition-colors whitespace-nowrap shrink-0"
                       >
                         입력
                       </button>
                       <button
                         type="button"
                         onClick={() => handleAutoLogin(acc.id)}
-                        className="px-2.5 py-1 text-xs font-semibold rounded-lg bg-[#edf5f0] hover:bg-[#e4ede7] text-[#2c5340] border border-[#e0ece4] transition-colors flex items-center gap-1"
+                        className="px-2.5 py-1 text-xs font-semibold rounded-lg bg-[#edf5f0] hover:bg-[#e4ede7] text-[#2c5340] border border-[#e0ece4] transition-colors flex items-center gap-1 whitespace-nowrap shrink-0"
                       >
                         <LogIn className="w-3 h-3" />
                         자동로그인
@@ -301,7 +301,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
           {mode === 'login' && (
             <div className="relative flex py-1 items-center">
               <div className="flex-grow border-t border-[#f0f0f1]"></div>
-              <span className="shrink-0 px-2 text-[11px] text-[#a1a1aa]">또는 직접 아이디 입력</span>
+              <span className="shrink-0 px-2 text-[11px] text-[#a1a1aa] whitespace-nowrap">또는 직접 아이디 입력</span>
               <div className="flex-grow border-t border-[#f0f0f1]"></div>
             </div>
           )}
@@ -393,7 +393,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
           {/* Tone-on-tone button styling */}
           <button
             type="submit"
-            className="w-full py-2.5 text-sm font-semibold rounded-xl bg-[#edf5f0] hover:bg-[#e4ede7] text-[#2c5340] border border-[#e0ece4] transition-colors mt-2"
+            className="w-full py-2.5 text-sm font-semibold rounded-xl bg-[#edf5f0] hover:bg-[#e4ede7] text-[#2c5340] border border-[#e0ece4] transition-colors mt-2 whitespace-nowrap"
           >
             {mode === 'login' ? '로그인하기' : '회원가입 완료'}
           </button>
