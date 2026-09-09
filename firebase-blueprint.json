@@ -1,0 +1,95 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile information for cafe members",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "username": { "type": "string" },
+        "nickname": { "type": "string" },
+        "email": { "type": "string" },
+        "role": { "type": "string", "enum": ["user", "admin"] },
+        "status": { "type": "string", "enum": ["active", "suspended"] },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "username", "nickname", "email", "role", "status"]
+    },
+    "Post": {
+      "title": "Post",
+      "description": "Fan cafe board post",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "content": { "type": "string" },
+        "category": { "type": "string" },
+        "tags": { "type": "array" },
+        "authorId": { "type": "string" },
+        "authorUsername": { "type": "string" },
+        "authorNickname": { "type": "string" },
+        "authorRole": { "type": "string" },
+        "isNotice": { "type": "boolean" },
+        "views": { "type": "number" },
+        "likesCount": { "type": "number" },
+        "commentsCount": { "type": "number" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "title", "content", "category", "authorId", "authorNickname", "createdAt"]
+    },
+    "Comment": {
+      "title": "Comment",
+      "description": "Comment on a fan cafe post",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "postId": { "type": "string" },
+        "authorId": { "type": "string" },
+        "authorUsername": { "type": "string" },
+        "authorNickname": { "type": "string" },
+        "authorRole": { "type": "string" },
+        "content": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "parentId": { "type": "string" }
+      },
+      "required": ["id", "postId", "authorId", "authorNickname", "content", "createdAt"]
+    },
+    "PdfRecord": {
+      "title": "PdfRecord",
+      "description": "Generated or managed PDF document task metadata",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "taskType": { "type": "string", "enum": ["image_to_pdf", "merge_pdf", "split_pdf"] },
+        "pageCount": { "type": "number" },
+        "fileSizeBytes": { "type": "number" },
+        "sourceCount": { "type": "number" },
+        "authorId": { "type": "string" },
+        "authorNickname": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "notes": { "type": "string" }
+      },
+      "required": ["id", "title", "taskType", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "User account and profile data"
+    },
+    "/posts/{postId}": {
+      "schema": "Post",
+      "description": "Board post articles and notices"
+    },
+    "/posts/{postId}/comments/{commentId}": {
+      "schema": "Comment",
+      "description": "Comments on posts"
+    },
+    "/pdf_records/{recordId}": {
+      "schema": "PdfRecord",
+      "description": "Managed PDF task logs and documents"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper function
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    // User accounts
+    match /users/{userId} {
+      allow read: if true;
+      allow create, update: if true;
+      allow delete: if isSignedIn();
+    }
+
+    // Posts
+    match /posts/{postId} {
+      allow read: if true;
+      allow create, update, delete: if true;
+
+      // Subcollection comments
+      match /comments/{commentId} {
+        allow read: if true;
+        allow create, update, delete: if true;
+      }
+
+      // Subcollection likes
+      match /likes/{likeId} {
+        allow read: if true;
+        allow create, update, delete: if true;
+      }
+    }
+
+    // PDF Management records
+    match /pdf_records/{recordId} {
+      allow read: if true;
+      allow create, update, delete: if true;
+    }
+
+    // HWP & HWPX Document records
+    match /hwp_documents/{docId} {
+      allow read: if true;
+      allow create, update, delete: if true;
+    }
+
+    // Connection testing
+    match /test/{docId} {
+      allow read, write: if true;
+    }
+  }
+}

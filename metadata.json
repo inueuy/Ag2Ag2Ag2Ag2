@@ -1,0 +1,6 @@
+{
+  "name": "유은이 팬카페",
+  "description": "유은이 팬카페, PDF 스튜디오 및 HWP/HWPX 문서 스튜디오 - 회원제 커뮤니티, PDF 생성/병합/분할, rhwp 패키지 기반 한글 HWP·HWPX 뷰어 및 웹 편집기",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
